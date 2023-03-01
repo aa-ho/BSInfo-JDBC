@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 public class JDBC04Properties {
@@ -18,11 +19,9 @@ public class JDBC04Properties {
 			String dbUrl = properties.getProperty("DBURL");
 			String dbUser = properties.getProperty("DBUSER");
 			String dbPassword = properties.getProperty("DBPASSWORD");
-			/*
-			 * TODO
-			 */
-			Class.forName(TODO);
-			Connection connection = DriverManager.getConnection(TODO);
+
+			Class.forName(dbDriver);
+			Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			
 			if (connection != null) {
 				System.out.println("Connection established!");

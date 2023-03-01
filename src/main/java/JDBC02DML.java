@@ -9,8 +9,8 @@ public class JDBC02DML {
 		System.out.println("Execute DML");
 		System.out.println("====================");
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306", "guest", "Pa$$w0rd");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demoDB", "guest", "Pa$$w0rd");
 			
 			if (connection != null) {
 				System.out.println("Connection established!");
@@ -20,12 +20,11 @@ public class JDBC02DML {
 			}
 			
 			Statement statement = null;
-			//1. Erzeugen eines Datensatzes in der Tabelle employees
-			/*
-			 * TODO
-			 */
-			String sql = "TODO";
-			
+			//1. Erzeugen eines Datensatzes in der Tabelle employee
+			statement = connection.createStatement();
+			String sql = "INSERT INTO employee(lastName, firstName, email) VALUES ('Doe', 'John', 'john.doe@demoDB')" ;
+			int i = statement.executeUpdate(sql);
+			System.out.println("Query ok, " +i+ " rows affected");
 			if (connection != null && !connection.isClosed()) {
 				connection.close();
 				System.out.println("Connection closed");

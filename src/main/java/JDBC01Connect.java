@@ -9,29 +9,31 @@ public class JDBC01Connect {
 		System.out.println("====================");
 
 		try {
-			// 1. Laden des JDBC Treibers für mariaDB
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			// 1. Laden des JDBC Treibers fï¿½r mariaDB
 			// jar-Archiv muss im CLASSPATH eingetragen sein.
-			/*
-			 * TODO
-			 */
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
 			System.out.println("Driver sucessfully loaded!");
-			Connection connection = DriverManager.getConnection
-					("jdbc:mysql://localhost:3306/demoDB", "guest", "Pa$$w0rd");
-			System.out.println("Connection established");
+			// 2. Erstellen der Connection zur Datenbank
+			Connection connection = null;
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demoDB", "guest", "Pa$$w0rd");
 			if (connection != null) {
 				System.out.println("Connection established!");
 			} else {
 				System.out.println("Could not establish connection!");
 				return;
 			}
-			// 4. Schließen der Connection
+			// 4. Schlieï¿½en der Connection
 			if (connection != null && !connection.isClosed()) {
 				connection.close();
 				System.out.println("Connection closed");
 			}
-		} catch (ClassNotFoundException | SQLException e) {
-			System.out.println("Error: " + e.getMessage());
+		} catch (ClassNotFoundException e) {
+			System.out.println("JDBC-Driver not found");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("Connection could not be established");
+			e.printStackTrace();
 		}
 	}
 }

@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 public class JDBC06PreparedStatements {
@@ -18,11 +20,23 @@ public class JDBC06PreparedStatements {
 			// 2. Prepared Statement erzeugen
 			pst = connection.prepareStatement("SELECT * FROM employee WHERE lastName=? AND firstName=?");
 			// 3. Werte zuweisen
-			// TODO
+			pst.setString(1, "Doe");
+			pst.setString(2, "John");
+			ResultSet resultSet = pst.executeQuery();
 			// 4. Metadaten ermitteln
-			// TODO
+			ResultSetMetaData rsMetaData = resultSet.getMetaData();
+					
 			// 5. Resultset ausgeben
-			// TODO
+			
+			int columnCount = rsMetaData.getColumnCount();
+			while (resultSet.next()) {
+				for (int i = 1; i <= columnCount; ++i) {
+				Object o = resultSet.getObject(i);
+				System.out.print(o == null ? "null" : o);
+				System.out.print("\t");
+				}
+				System.out.println();
+				}
 		} catch (SQLException | ClassNotFoundException | IOException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
