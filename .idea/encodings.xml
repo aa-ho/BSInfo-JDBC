@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/java/JDBC01Connect.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/JDBC02DML.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/JDBC03DQL.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/JDBC04Properties.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/JDBC05Util.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/JDBC06PreparedStatements.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC01Connect.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC01Connect.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC02DML.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC02DML.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC03DQL.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC03DQL.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC04Properties.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC04Properties.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC05Util.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC05Util.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC06PreparedStatements.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jdbc/JDBC06PreparedStatements.java" charset="windows-1252" />
   </component>
 </project>
