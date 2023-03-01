@@ -3,11 +3,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBC01Connect {
-
 	public static void main(String[] args) {
 		System.out.println("JDBC Connection Test");
 		System.out.println("====================");
-
 		try {
 			// 1. Laden des JDBC Treibers f�r mariaDB
 			// jar-Archiv muss im CLASSPATH eingetragen sein.
@@ -15,8 +13,7 @@ public class JDBC01Connect {
 
 			System.out.println("Driver sucessfully loaded!");
 			// 2. Erstellen der Connection zur Datenbank
-			Connection connection = null;
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demoDB", "guest", "Pa$$w0rd");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demoDB", "guest", "Pa$$w0rd");
 			if (connection != null) {
 				System.out.println("Connection established!");
 			} else {
@@ -24,7 +21,7 @@ public class JDBC01Connect {
 				return;
 			}
 			// 4. Schlie�en der Connection
-			if (connection != null && !connection.isClosed()) {
+			if (!connection.isClosed()) {
 				connection.close();
 				System.out.println("Connection closed");
 			}
