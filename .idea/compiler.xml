@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="BSInfo-JDBC" target="7" />
+      <module name="BSInfo-JDBC" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
