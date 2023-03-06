@@ -10,7 +10,8 @@ public class JDBC02DML {
 	public static void main(String[] args) {
 		System.out.println("Execute DML");
 		System.out.println("====================");
-		try {
+		try
+		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demoDB", "guest", "Pa$$w0rd");
 			
