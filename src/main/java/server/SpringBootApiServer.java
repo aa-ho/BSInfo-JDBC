@@ -17,13 +17,16 @@ public class SpringBootApiServer {
         SpringApplication.run(SpringBootApiServer.class, args);
     }
 
+    @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
     @GetMapping("/hello")
     public String hello() {
         return "HelloWorld";
     }
 
-    @Bean
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
+
+
+
 }
