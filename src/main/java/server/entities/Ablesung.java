@@ -24,27 +24,27 @@ public class Ablesung {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private String counterId;
-    private LocalDate date;
+    private String zählerID;
+    private LocalDate datum;
     @ManyToOne
-    private Customer customer;
-    private String comment;
-    private boolean newEntry;
-    private int counterValue;
+    private Customer kunde;
+    private String kommentar;
+    private boolean neueEingabe;
+    private int zählerstand;
     @Enumerated
-    private CounterType counterType;
+    private Zählertyp zählerTyp;
 
-    public Ablesung(String counterId, LocalDate date, Customer customer, String comment, boolean newEntry, int counterValue, CounterType counterType) {
-        this.counterId = counterId;
-        this.date = date;
-        this.customer = customer;
-        this.comment = comment;
-        this.newEntry = newEntry;
-        this.counterValue = counterValue;
-        this.counterType = counterType;
+    public Ablesung(String zählerID, LocalDate datum, Customer kunde, String kommentar, boolean neueEingabe, int zählerstand, Zählertyp zählerTyp) {
+        this.zählerID = zählerID;
+        this.datum = datum;
+        this.kunde = kunde;
+        this.kommentar = kommentar;
+        this.neueEingabe = neueEingabe;
+        this.zählerstand = zählerstand;
+        this.zählerTyp = zählerTyp;
     }
 
-    public enum CounterType {
+    public enum Zählertyp {
 
         POWER("Strom"),
         GAS("Gas"),
@@ -53,7 +53,7 @@ public class Ablesung {
 
         final String label;
 
-        CounterType(String label) {
+        Zählertyp(String label) {
             this.label = label;
         }
 
