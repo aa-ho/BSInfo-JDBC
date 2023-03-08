@@ -18,17 +18,6 @@ import java.io.InputStreamReader;
 public class SpringBootApiServer {
 
     public static void main(String[] args) {
-/*        try {
-            String command = "C:\\Windows\\System32\\cmd.exe /c start C:\\progs\\mysql_start.bat";
-            Process proc = Runtime.getRuntime().exec(command);
-            BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-            String line = null;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
         SpringApplication.run(SpringBootApiServer.class, args);
     }
 
