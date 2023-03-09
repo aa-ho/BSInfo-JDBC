@@ -100,7 +100,6 @@ public class Ablesebogen extends JFrame {
         setTitle("Ablesebogen");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
 }
     
     
