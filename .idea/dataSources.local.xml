@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-212.4746.92">
+    <data-source name="BSInfo-JDBC/Hibernate" uuid="7ed65277-5c9d-49e4-bc02-e2a315e81492">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>guest</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
