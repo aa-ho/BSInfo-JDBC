@@ -16,7 +16,7 @@ public class Kunden extends JFrame {
         container.setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(400, 400);
+        setSize(500, 500);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 }
