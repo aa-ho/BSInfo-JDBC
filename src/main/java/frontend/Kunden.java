@@ -12,7 +12,7 @@ public class Kunden extends JFrame {
     public Kunden() {
         super("Kundendaten");
         final Container container = getContentPane();
-        container.setSize(400, 400);
+        container.setSize(500, 500);
         container.setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
