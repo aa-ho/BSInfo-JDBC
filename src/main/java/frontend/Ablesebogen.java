@@ -93,6 +93,7 @@ public class Ablesebogen extends JFrame {
                 ablesung.setZählerstand(Integer.parseInt(this.zaehlerstand1.getText()));
                 ablesung.setZählerID(ablesung.getZählerID());
                 ablesung.setZählerTyp(ablesung.getZählerTyp());
+                ablesung.setNeueEingabe(ablesung.isNeueEingabe());
                 ablesebogenRessource.addAblesung(ablesung);
                 this.ausgabe.setText("Speicherung war erfolgreich");
             } catch (Exception var4) {
