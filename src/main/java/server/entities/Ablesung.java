@@ -11,6 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -21,6 +22,10 @@ import java.util.UUID;
 @Entity
 @ToString
 public class Ablesung {
+
+    public static void main(String[] args) {
+        Ablesung ablesung = new Ablesung();
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -45,7 +50,6 @@ public class Ablesung {
     }
 
     public enum Zählertyp {
-
         POWER("Strom"),
         GAS("Gas"),
         HEATING("Heizung"),

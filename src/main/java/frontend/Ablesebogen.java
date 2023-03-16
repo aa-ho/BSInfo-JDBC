@@ -5,12 +5,16 @@
 
 package frontend;
 
+import server.entities.Ablesung;
+
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.UUID;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -44,11 +48,13 @@ public class Ablesebogen extends JFrame {
     }
 
     public static void zeigeMeldung(String error) {
-        JOptionPane.showMessageDialog((Component)null, error, "Fehler", 0);
+        JOptionPane.showMessageDialog(null, error, "Fehler", 0);
     }
 
     public Ablesebogen() {
         super("Ablesebogen");
+        CustomerRessource customerRessource = new CustomerRessource();
+        AblesebogenRessource ablesebogenRessource = new AblesebogenRessource();
         Container container = this.getContentPane();
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Date date = new Date();
@@ -73,6 +79,21 @@ public class Ablesebogen extends JFrame {
         this.kommentar1 = new JTextField();
         this.speichernButton.addActionListener((e) -> {
             try {
+                if (customerRessource.getCustomer(UUID.fromString(this.kundennummer1.getText())) == null) {
+                    customerRessource.addCustomer("Hans", "Wurst");
+                }
+                Ablesung ablesung = new Ablesung();
+                ablesung.setId(UUID.fromString(this.kundennummer1.getText()));
+                ablesung.setKommentar(this.kommentar1.getText());
+                SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
+                Date date2 = outputFormat.parse(dateToString);
+                SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
+                ablesung.setDatum(LocalDate.parse(inputFormat.format(date2)));
+                ablesung.setKunde(customerRessource.getCustomer(UUID.fromString(this.kundennummer1.getText())));
+                ablesung.setZählerstand(Integer.parseInt(this.zaehlerstand1.getText()));
+                ablesung.setZählerID(ablesung.getZählerID());
+                ablesung.setZählerTyp(ablesung.getZählerTyp());
+                ablesebogenRessource.addAblesung(ablesung);
                 this.ausgabe.setText("Speicherung war erfolgreich");
             } catch (Exception var4) {
                 var4.printStackTrace();
